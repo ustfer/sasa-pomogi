@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCalendarsTable extends Migration
+class CreateUserWorkTimesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,15 @@ class CreateCalendarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('calendars', function (Blueprint $table) {
+        Schema::create('user_work_times', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
-            $table->string('task');
-            $table->timestamp('started_on');
-            $table->timestamp('ended_on');
+            $table->string('info');
             $table->timestamps();
         });
 
-        Schema::table('calendars', function (Blueprint $table) {
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->onDelete('cascade');
+        Schema::table('user_work_times', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -36,6 +32,6 @@ class CreateCalendarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calendars');
+        Schema::dropIfExists('user_work_times');
     }
 }
