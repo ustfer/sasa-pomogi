@@ -15,7 +15,17 @@ class CreateCalendarsTable extends Migration
     {
         Schema::create('calendars', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigIngeher('user_id')->unsigned();
+            $table->string('task');
+            $table->timestamp('started_on');
+            $table->timestamp('ended_on');
             $table->timestamps();
+        });
+
+        Schema::table('calendars', function (Blueprint $table) {
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
         });
     }
 
