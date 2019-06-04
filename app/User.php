@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserWorkTime::class);
     }
+
+    public function calendar()
+    {
+        return $this->hasMany(Calendar::class);
+    }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Calendar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class CalendarController extends Controller
 {
@@ -33,9 +35,21 @@ class CalendarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'task' => "required",
+            'started_on' => "required|date",
+            'started_on' => "required|date"
+        ]);
+
+        $task = new Calendar();
+
+        $task->fill($request->all());
+
+        $user->calendar()->save($task);
+
+        return \Redirect::route('user.evernote', ['user' => $user]);
     }
 
     /**
