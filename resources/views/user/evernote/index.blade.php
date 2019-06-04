@@ -16,17 +16,16 @@
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col col-md-3">Время</th>
+                        <th scope="col col-md-3">Дата</th>
                         <th scope="col">Описание</th>
-                        <th scope="col">Дата</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($user->calendar as $item)
                     <tr>
-                        <th scope="row"></th>
+                        <th scope="row">{{$item->created_at}}</th>
                         <td>{{$item->task}}</td>
-                        <td></td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -53,14 +52,14 @@
             <form action="{{route('user.evernote.store', ['user' => $user])}}" method="POST">
                 @csrf
                 <div class="form-group row">
-                    <label for="example-datetime-local-input" class="col-2 col-form-label">startet at</label>
+                    <label for="example-datetime-local-input" class="col-2 col-form-label">Начало задачи</label>
                     <div class="col-10">
                         <input class="form-control" type="date" value="2011-08-19T13:45:00"
                             id="example-datetime-local-input" name="started_on">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="example-datetime-local-input" class="col-2 col-form-label">ended at</label>
+                    <label for="example-datetime-local-input" class="col-2 col-form-label">Конец задачи</label>
                     <div class="col-10">
                         <input class="form-control" type="date" value="2011-08-19T13:45:00"
                             id="example-datetime-local-input" name="ended_on">
