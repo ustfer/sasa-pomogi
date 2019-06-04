@@ -64,7 +64,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        $user = User::findOrFail($user)->first();
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -76,7 +77,21 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        // $user->
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
+            $request->avatar->storeAs('avatars',$avatarName);
+            $user->avatar = 'avatars/' . $avatarName;
+        }
+
+        if ($request->has('name')) {
+            $user->name = $request->name
+        }
+
+        $user->save();
+        dd($user);
+        return \Redirect::route('user.show', ['user' => $user]);
     }
 
     /**

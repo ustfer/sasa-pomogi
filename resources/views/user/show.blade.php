@@ -7,13 +7,16 @@
 <li class="nav-item">
     <a class="nav-link" href="{{ route('user.evernote', ['user' => $user->id]) }}">Ежедневник</a>
 </li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('user.edit', ['user' => $user->id]) }}">Обновить</a>
+</li>
 @endsection
 
 @section('content')
 <div class="container py-5">
     <div class="row">
         <div class="col-md-2 offset-md-2">
-            <img src="./img/tuleikin.jpg" alt="7c0c389c8de2c69a78ddc418a8c2097f" class="img-fluid">
+            <img src="/storage/{{$user->avatar}}" alt="" class="img-fluid">
         </div>
         <div class="col-md-6">
             <div class="row">
