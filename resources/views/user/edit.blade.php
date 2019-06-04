@@ -100,12 +100,24 @@
                             <div class="input-group-prepend">
 
                             </div>
-                            <input type="file" class="form-control" placeholder="Фото врача" name="avatar"
+                            <input type="text" class="form-control" placeholder="Фото врача" name="avatar"
                                 aria-label="Имя пользователя" aria-describedby="basic-addon1">
                         </div>
                     </th>
 
                 </tr>
+                {{-- <tr>
+                    <th scope="row">Фото врача
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+
+                            </div>
+                            <input type="file" class="form-control" placeholder="Фото врача" name="avatar"
+                                aria-label="Имя пользователя" aria-describedby="basic-addon1">
+                        </div>
+                    </th>
+
+                </tr> --}}
             </tbody>
         </table>
         <button type="submit" class="btn btn-primary">Добавить Врача</button>

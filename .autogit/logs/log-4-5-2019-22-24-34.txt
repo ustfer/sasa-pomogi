@@ -1,0 +1,22 @@
+-------------------- Auto-Git Log --------------------
+		Tue Jun 04 2019 22:24:34 GMT+0300 (RTZ 2 (зима))
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/UserController.php
+* config/filesystems.php
+* resources/views/user/show.blade.php
+* storage/app/public/.gitignore
+
+
+Created files:
+* database/migrations/2019_06_04_190226_add_avatar_users_table.php
+* resources/views/user/edit.blade.php
+* storage/app/public/avatars/.gitignore
+* storage/app/public/no-image.png
+
+
+Deleted files:
+
+
+Renamed files:

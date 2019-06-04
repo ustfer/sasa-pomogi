@@ -16,7 +16,7 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-md-2 offset-md-2">
-            <img src="/storage/{{$user->avatar}}" alt="" class="img-fluid">
+            <img src="{{$user->avatar}}" alt="" class="img-fluid">
         </div>
         <div class="col-md-6">
             <div class="row">

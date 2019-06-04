@@ -78,19 +78,40 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         // $user->
-        if ($request->hasFile('avatar')) {
-            $avatar = $request->file('avatar');
-            $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
-            $request->avatar->storeAs('avatars',$avatarName);
-            $user->avatar = 'avatars/' . $avatarName;
-        }
+        // dd($request->has('avatar'));
+        // dd($request->avatar);
+        // if ($request->has('avatar')) {
+        //     $avatarName = $user->id . '_avatar' . time() . '.' .
+        //         $request->avatar->getClientOriginalExtension();
+        //     $request->avatar->storeAs('avatars', $avatarName);
+        //     $user->avatar = 'avatars/' . $avatarName;
+        // }
 
         if ($request->has('name')) {
-            $user->name = $request->name
+            $user->name = $request->name;
+        }
+
+        if ($request->has('avatar')) {
+            $user->avatar = $request->avatar;
+        }
+
+        if ($request->has('bio')) {
+            $user->bio = $request->bio;
+        }
+
+        if ($request->has('position')) {
+            $user->position = $request->position;
+        }
+
+        if ($request->has('phone')) {
+            $user->phone = $request->phone;
+        }
+
+        if ($request->has('email')) {
+            $user->email = $request->email;
         }
 
         $user->save();
-        dd($user);
         return \Redirect::route('user.show', ['user' => $user]);
     }
 

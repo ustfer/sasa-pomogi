@@ -14,7 +14,7 @@ class AddAvatarUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('avatar')->default('no-image.png');
+            $table->string('avatar')->default('https://via.placeholder.com/150');
         });
     }
 
