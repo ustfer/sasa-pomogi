@@ -22,11 +22,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($user->calendar as $item)
                     <tr>
                         <th scope="row"></th>
-                        <td></td>
+                        <td>{{$item->task}}</td>
                         <td></td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
             <nav aria-label="Page navigation example">
@@ -50,9 +52,24 @@
     </section>
     <section class="main_input">
         <div class="container">
-            <form action="">
+            <form action="{{route('user.evernote.store', ['user' => $user])}}" method="POST">
+                @csrf
+                <div class="form-group row">
+                    <label for="example-datetime-local-input" class="col-2 col-form-label">startet at</label>
+                    <div class="col-10">
+                        <input class="form-control" type="date" value="2011-08-19T13:45:00"
+                            id="example-datetime-local-input" name="started_on">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-datetime-local-input" class="col-2 col-form-label">ended at</label>
+                    <div class="col-10">
+                        <input class="form-control" type="date" value="2011-08-19T13:45:00"
+                            id="example-datetime-local-input" name="ended_on">
+                    </div>
+                </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="task"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Добавить запись</button>
             </form>
