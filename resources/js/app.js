@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new Calendar(calendarEl, {
-        plugins: [dayGridPlugin]
+        plugins: [dayGridPlugin],
+        events: window.__events__
     });
 
     calendar.render();

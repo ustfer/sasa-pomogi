@@ -55,6 +55,11 @@ class UserController extends Controller
         $user = User::findOrFail($user)->first();
         return view('user.evernote.index', compact('user'));;
     }
+    public function calendarIndex(User $user)
+    {
+        $user = User::findOrFail($user)->first();
+        return view('user.calendar.index', compact('user'));;
+    }
 
     /**
      * Show the form for editing the specified resource.

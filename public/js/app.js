@@ -47239,7 +47239,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
   var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](calendarEl, {
-    plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1___default.a]
+    plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1___default.a],
+    events: window.__events__
   });
   calendar.render();
 });
@@ -47322,8 +47323,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\open_server_53\OSPanel\domains\baka.loc\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\open_server_53\OSPanel\domains\baka.loc\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alexs\Code\spa.loc\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alexs\Code\spa.loc\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
