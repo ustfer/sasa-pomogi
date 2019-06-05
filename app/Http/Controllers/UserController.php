@@ -58,7 +58,17 @@ class UserController extends Controller
     public function calendarIndex(User $user)
     {
         $user = User::findOrFail($user)->first();
-        return view('user.calendar.index', compact('user'));;
+        $collection = collect($user->calendar);
+        $baka = $collection->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'start' => $item->started_on,
+                'end' => $item->ended_on,
+                'title' => $item->task
+            ];
+        });
+        $calendar = $baka->all();
+        return view('user.calendar.index', compact('user', 'calendar'));;
     }
 
     /**

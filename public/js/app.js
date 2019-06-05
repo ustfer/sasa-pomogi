@@ -86,6 +86,48 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@fullcalendar/core/locales/ru.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@fullcalendar/core/locales/ru.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+     true ? module.exports = factory() :
+    undefined;
+}(this, function () { 'use strict';
+
+    var ru = {
+        code: "ru",
+        week: {
+            dow: 1,
+            doy: 4 // The week that contains Jan 4th is the first week of the year.
+        },
+        buttonText: {
+            prev: "Пред",
+            next: "След",
+            today: "Сегодня",
+            month: "Месяц",
+            week: "Неделя",
+            day: "День",
+            list: "Повестка дня"
+        },
+        weekLabel: "Нед",
+        allDayText: "Весь день",
+        eventLimitText: function (n) {
+            return "+ ещё " + n;
+        },
+        noEventsMessage: "Нет событий для отображения"
+    };
+
+    return ru;
+
+}));
+
+
+/***/ }),
+
 /***/ "./node_modules/@fullcalendar/core/main.js":
 /*!*************************************************!*\
   !*** ./node_modules/@fullcalendar/core/main.js ***!
@@ -47227,21 +47269,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.js");
 /* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fullcalendar/core/locales/ru */ "./node_modules/@fullcalendar/core/locales/ru.js");
+/* harmony import */ var _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
   var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](calendarEl, {
     plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1___default.a],
+    locale: _fullcalendar_core_locales_ru__WEBPACK_IMPORTED_MODULE_2___default.a,
     events: window.__events__
   });
+  console.log(window.__events__);
   calendar.render();
 });
 

@@ -20,4 +20,9 @@ class Calendar extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getStartAttribute()
+    {
+        return $this->started_on;
+    }
 }

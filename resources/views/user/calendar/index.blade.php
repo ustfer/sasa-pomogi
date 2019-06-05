@@ -3,18 +3,13 @@
 @section('content')
 <div class="container">
     @foreach ($user->calendar as $item)
-    @dump($item)
     <pre>
-        {{json_encode($item)}}
-        {{array_map(function ($i) {
-            return [
-                'event' => $i['event'],
-                'start' => $i['started_on'],
-                'end' => $['ended_on']
-        ];
-        }, $item)}}
+    {{json_encode($item)}}
     </pre>
     @endforeach
+    <script>
+    window.__events__ = @json($calendar)
+    </script>
     <div id="calendar"></div>
 </div>
 @endsection

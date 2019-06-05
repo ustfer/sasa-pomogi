@@ -1,0 +1,24 @@
+-------------------- Auto-Git Log --------------------
+		Wed Jun 05 2019 21:01:36 GMT+0300 (RTZ 2 (зима))
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/UserController.php
+* package-lock.json
+* public/css/app.css
+* public/js/app.js
+* public/mix-manifest.json
+* resources/js/app.js
+* resources/views/user/show.blade.php
+* routes/web.php
+
+
+Created files:
+* resources/views/user/calendar/index.blade.php
+
+
+Deleted files:
+* resources/views/calendar.blade.php
+
+
+Renamed files:
