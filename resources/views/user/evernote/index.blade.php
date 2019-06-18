@@ -7,6 +7,12 @@
 <li class="nav-item">
     <a class="nav-link" href="{{ route('user.evernote', ['user' => $user->id]) }}">Ежедневник</a>
 </li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('user.calendar', ['user' => $user->id]) }}">Календарь</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('user.edit', ['user' => $user->id]) }}">Обновить профиль</a>
+</li>
 @endsection
 
 @section('content')

@@ -11,7 +11,7 @@
     <a class="nav-link" href="{{ route('user.calendar', ['user' => $user->id]) }}">Календарь</a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('user.edit', ['user' => $user->id]) }}">Обновить</a>
+    <a class="nav-link" href="{{ route('user.edit', ['user' => $user->id]) }}">Обновить профиль</a>
 </li>
 @endsection
 
@@ -31,16 +31,6 @@
                 <div class="col-4">Должность</div>
                 <div class="col-7">
                     <h5>{{$user->position}}</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">Дни работы</div>
-                <div class="col-8">
-                    <ul>
-                        @foreach ($user->worktimes as $item)
-                        <li>{{$item->info}}</li>
-                        @endforeach
-                    </ul>
                 </div>
             </div>
             <div class="row">

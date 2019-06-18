@@ -52,8 +52,8 @@
                         <div class="input-group-prepend">
 
                         </div>
-                        <input type="text" class="form-control" placeholder="Рабочие дни" aria-label="Имя пользователя"
-                            aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" name="worktimes" placeholder="Рабочие дни" aria-label="Имя пользователя"
+                            aria-describedby="basic-addon1"  value="{{$user->worktimes}}">
                     </div>
                 </th>
 

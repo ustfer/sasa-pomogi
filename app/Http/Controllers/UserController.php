@@ -113,7 +113,9 @@ class UserController extends Controller
         if ($request->has('bio')) {
             $user->bio = $request->bio;
         }
-
+        if ($request->has('worktimes')) {
+            $user->worktimes = $request->worktimes;
+        }
         if ($request->has('position')) {
             $user->position = $request->position;
         }
