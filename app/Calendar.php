@@ -8,7 +8,7 @@ class Calendar extends Model
 {
 
     protected $fillable = [
-        'task', 'started_on', 'ended_on',
+        'task', 'started_on', 'ended_on', 'color'
     ];
 
     protected $dates = [

@@ -39,6 +39,7 @@ class CalendarController extends Controller
     {
         $request->validate([
             'task' => "required",
+            'color' => "required",
             'started_on' => "required|date",
             'started_on' => "required|date"
         ]);
@@ -92,8 +93,8 @@ class CalendarController extends Controller
      * @param  \App\Calendar  $calendar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Calendar $calendar)
+    public function destroy(Calendar $calendar, User $user)
     {
-        //
+        $calendar->delete();
     }
 }

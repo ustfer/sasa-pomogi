@@ -26,6 +26,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/user/{user}/calendar', 'UserController@calendarIndex')->name('user.calendar');
     Route::post('/user/{user}/calendar', 'CalendarController@store')->name('user.calendar.store');
     Route::post('/user/{user}/evernote', 'CalendarController@store')->name('user.evernote.store');
+
+    Route::delete('/evernote/{calendar}/delete', 'CalendarController@destroy')->name('evernote.delete');
 });
 // Route::resource('user/{user}/calendar', 'CalendarController');
 // Route::resource('user/{user}/evernote', 'CalendarController')->parameters([
