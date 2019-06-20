@@ -24,7 +24,7 @@
                     <tr>
                         <th scope="col col-md-3">Дата</th>
                         <th scope="col">Описание</th>
-                       
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,10 +32,21 @@
                     <tr>
                         <th scope="row">{{$item->created_at}}</th>
                         <td>{{$item->task}}</td>
+                        <td>
+                            <button class="btn btn-primary"  onclick="deleteItem({{$item->id}})">Удалить</button>
+                            {{-- <a role="button" class="btn btn-primary"  href="{{ route('user.evernote', ['user' => $user->id]) }}">Редактировать</a> --}}
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+            <script>
+            function deleteItem(id) {
+                if (confirm("Удалить?")) {
+                    axios.delete(`/evernote/${id}/delete`).then(document.location.reload())
+                }
+            }
+            </script>
             {{-- <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item">
@@ -60,15 +71,22 @@
                 <div class="form-group row">
                     <label for="example-datetime-local-input" class="col-2 col-form-label">Начало задачи</label>
                     <div class="col-10">
-                        <input class="form-control" type="date" value="2011-08-19T13:45:00"
+                        <input class="form-control" type="date"
                             id="example-datetime-local-input" name="started_on">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="example-datetime-local-input" class="col-2 col-form-label">Конец задачи</label>
                     <div class="col-10">
-                        <input class="form-control" type="date" value="2011-08-19T13:45:00"
+                        <input class="form-control" type="date"
                             id="example-datetime-local-input" name="ended_on">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="color-input" class="col-2 col-form-label">Цвет задачи</label>
+                    <div class="col-10">
+                        <input class="form-control" type="color"
+                            id="color-input" name="color" value="#1976d2">
                     </div>
                 </div>
                 <div class="form-group">

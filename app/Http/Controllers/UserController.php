@@ -64,7 +64,8 @@ class UserController extends Controller
                 'id' => $item->id,
                 'start' => $item->started_on,
                 'end' => $item->ended_on,
-                'title' => $item->task
+                'title' => $item->task,
+                'backgroundColor' => $item->color,
             ];
         });
         $calendar = $baka->all();
